@@ -4,7 +4,8 @@
     <form @submit.prevent="onSubmit">
       <div class="form-group">
         <input id="word" v-model="word" type="text" placeholder="word" />
-        <p class="error-msg" v-if="error">{{ error }}</p>
+        {{ todoList }}
+        <!-- <p class="error-msg" v-if="error">{{ error }}</p> -->
       </div>
       <!-- <button type="submit" @click="onClick">submit</button> -->
     </form>
