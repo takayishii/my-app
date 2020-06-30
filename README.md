@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # my-app
 
 ## Project setup
@@ -23,6 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# my-app
->>>>>>> d8caba973957f81d232e5580299695d858e7e49c
