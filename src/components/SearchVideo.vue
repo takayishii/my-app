@@ -56,19 +56,22 @@ import Params from "../models/Params";
 export default class SearchVideo extends Vue {
   @Prop() msg!: string;
 
+  baseUrl = "https://www.googleapis.com/youtube/v3";
   keyword = "nonkapibara";
   order = "viewCount"; // リソースを再生回数の多い順に並べます。
   params: Params = new Params();
-  results: any;
+  results: unknown = null;
   public searchVideo() {
     console.log("Hello!!");
     this.params.q = this.keyword;
+    // const self = this;
     axios
-      .get("https://www.googleapis.com/youtube/v3/search", {
+      .get(this.baseUrl + "/search", {
         params: this.params,
       })
-      .then(function(res) {
-        //this.results = res.data.items;
+      .then((res) => {
+        console.log(res);
+        this.results = res.data.items;
       });
   }
 }
