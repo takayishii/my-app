@@ -1,6 +1,28 @@
 <template>
   <div>
     <div>
+      <table>
+        <tr>
+          <th>日付</th>
+          <th>名前</th>
+          <th>作業内容</th>
+          <th>作業実績(min)</th>
+          <th>作業結果</th>
+          <th>redmine</th>
+          <th>台帳番号</th>
+          <th>その他番号</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div>
       <font size="6" color="#c71585">YouTube Search list (Vue.js CLI)</font>
     </div>
     <br />
@@ -52,13 +74,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import axios from "axios";
 import Params from "../models/Params";
-
 @Component
-export default class SearchVideo extends Vue {
+export default class DailyReport extends Vue {
   @Prop() msg!: string;
 
   baseUrl = "https://www.googleapis.com/youtube/v3";
-  keyword = "GRWM";
+  keyword = "nonkapibara";
   order = "viewCount"; // リソースを再生回数の多い順に並べます。
   params: Params = new Params();
   results: unknown = null;
@@ -78,19 +99,4 @@ export default class SearchVideo extends Vue {
 }
 </script>
 
-<style>
-table {
-  border-collapse: collapse;
-  border: solid 2px #c71585; /*表全体を線で囲う*/
-}
-table th {
-  color: #fff0f5; /*文字色*/
-  background: #ff69b4; /*背景色*/
-  border: dashed 1px #c71585;
-}
-
-table td {
-  background: #fff0f5;
-  border: dashed 1px #c71585;
-}
-</style>
+<style></style>
